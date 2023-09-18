@@ -1,0 +1,141 @@
+.w-sm {
+  width: 73px;
+}
+
+.w-md {
+  width: 89px;
+}
+
+.w-st {
+  width: 101px;
+}
+
+.h-sm {
+  height: 31px;
+}
+
+.h-md {
+  height: 41px;
+}
+
+.h-st {
+  height: 47px;
+}
+
+.f-sm {
+  font-size: 12px;
+}
+
+.f-md {
+  font-size: 14px;
+}
+
+.f-st {
+  font-size: 16px;
+}
+
+.primary-1 {
+  background-color: #3498db;
+  border-radius: 8px;
+  color: white;
+  font-family: monospace, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-1:hover {
+  background-color: #2980b9;
+}
+
+.primary-1:active {
+  background-color: #2070a0;
+}
+
+.primary-2 {
+  background-color: #1f618d;
+  border-radius: 8px;
+  color: white;
+  font-family: monospace, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-2:hover {
+  background-color: #154360;
+}
+
+.primary-2:active {
+  background-color: #487a99;
+}
+
+.secondary-1 {
+  border-color: #3498db;
+  color: #3498db;
+  border-radius: 8px;
+  font-family: monospace, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.secondary-1:hover {
+  border-color: #2980b9;
+  color: #2980b9;
+}
+.secondary-1:active {
+  border-color: #2070a0;
+  color: #2070a0;
+}
+
+.secondary-2 {
+  border-color: #1f618d;
+  color: #1f618d;
+  border-radius: 8px;
+  font-family: monospace, sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.secondary-2:hover {
+  border-color: #154360;
+  color: #154360;
+}
+.secondary-2:active {
+  border-color: #487a99;
+  color: #487a99;
+}
+
+.ternary-1 {
+  color: #3498db;
+  text-decoration: underline;
+  font-family: monospace, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ternary-1:hover {
+  color: #2980b9;
+}
+.ternary-1:active {
+  color: #2070a0;
+}
+
+.ternary-2 {
+  color: #1f618d;
+  text-decoration: underline;
+  font-family: monospace, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ternary-2:hover {
+  color: #154360;
+}
+.ternary-2:active {
+  color: #487a99;
+}
