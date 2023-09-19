@@ -1,6 +1,6 @@
 // Variables
-$br: 8px;
-$ft: monospace, sans-serif;
+$base-border-radius: 8px;
+$base-font-family: monospace, sans-serif;
 $light-blue: #3498db;
 $cobalt-blue: #2980b9;
 $ocean-blue: #2070a0;
@@ -8,169 +8,81 @@ $saphire-blue: #1f618d;
 $navy-blue: #154360;
 $navier-blue: #487a99;
 
-// Align text
-@mixin aling-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-// Base button style
-@mixin btn-primary {
-  border-radius: $br;
-  color: white;
-  font-family: $ft;
-  @include aling-text();
-}
-
-@mixin btn-secondary {
-  border-radius: $br;
-  font-family: $ft;
-  border-style: solid;
-  border-width: 1px;
-  @include aling-text();
-}
-
-@mixin btn-ternary {
-  text-decoration: underline;
-  font-family: $ft;
-  @include aling-text();
-}
-
-// Sizes value
-$utilities: (
-  "width": (
-    "prefix": "w",
-    "values": (
-      "sm": 73px,
-      "md": 89px,
-      "st": 101px,
-    ),
-  ),
-  "height": (
-    "prefix": "h",
-    "values": (
-      "sm": 31px,
-      "md": 41px,
-      "st": 47px,
-    ),
-  ),
-  "font-size": (
-    "prefix": "f",
-    "values": (
-      "sm": 12px,
-      "md": 14px,
-      "st": 16px,
-    ),
-  ),
+$btn-styles: (
+  "pri1": "primary1",
+  "sec1": "secondary1",
+  "ter1": "ternary1",
+  "pri2": "primary2",
+  "sec2": "secondary2",
+  "ter2": "ternary2",
 );
 
-// Width, height and font-size classes
-@each $property, $map in $utilities {
-  $prefix: map-get($map, "prefix");
-  $values: map-get($map, "values");
+$colors: (
+  "light-blue": #3498db,
+  "saphire-blue": #1f618d,
+);
 
-  @each $size, $sizeValue in $values {
-    .#{$prefix}-#{$size} {
-      #{$property}: $sizeValue;
+$hover-colors: (
+  "cobalt-blue": #2980b9,
+  "navy-blue": #154360,
+);
+
+$active-colors: (
+  "ocean-blue": #2070a0,
+  "navier-blue": #487a99,
+);
+
+$widths: (
+  "sm": 73px,
+  "md": 89px,
+  "st": 101px,
+);
+$heights: (
+  "sm": 31px,
+  "md": 41px,
+  "st": 47px,
+);
+
+$font-sizes: (
+  "sm": 12px,
+  "md": 14px,
+  "st": 16px,
+);
+
+@mixin base-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $base-font-family;
+  border-radius: $base-border-radius;
+}
+
+@each $btn-style, $btn-style-value in $btn-styles {
+  @each $color, $color-value in $colors {
+    @each $width, $width-value in $widths {
+      @each $height, $height-value in $heights {
+        @each $font-size, $font-size-value in $font-sizes {
+          @if ($height == $width and $height == $font-size) {
+            .#{$btn-style}-#{$height}-#{$color} {
+              @include base-btn;
+              width: $width-value;
+              height: $height-value;
+              font-size: $font-size-value;
+              @if ($btn-style == "pri1" or $btn-style == "pri2") {
+                color: white;
+                background-color: $color-value;
+              } @else if ($btn-style == "sec1" or $btn-style == "sec2") {
+                color: $color-value;
+                border: solid 1px $color-value;
+              } @else {
+                color: $color-value;
+                text-decoration: underline;
+                border-radius: none;
+              }
+            }
+          }
+        }
+      }
     }
-  }
-}
-
-// Primary 1 button
-.primary-1 {
-  background-color: $light-blue;
-  @include btn-primary();
-}
-
-.primary-1 {
-  &:hover {
-    background-color: $cobalt-blue;
-  }
-}
-
-.primary-1 {
-  &:active {
-    background-color: $ocean-blue;
-  }
-}
-
-// Primary 2 button
-.primary-2 {
-  background-color: $saphire-blue;
-  @include btn-primary();
-}
-
-.primary-2 {
-  &:hover {
-    background-color: $navy-blue;
-  }
-}
-
-.primary-2 {
-  &:active {
-    background-color: $navier-blue;
-  }
-}
-
-// Secondary 1 button
-.secondary-1 {
-  border-color: $light-blue;
-  color: $light-blue;
-  @include btn-secondary();
-
-  &:hover {
-    border-color: $cobalt-blue;
-    color: $cobalt-blue;
-  }
-
-  &:active {
-    border-color: $ocean-blue;
-    color: $ocean-blue;
-  }
-}
-
-// Secondary 2 button
-.secondary-2 {
-  border-color: $saphire-blue;
-  color: $saphire-blue;
-  @include btn-secondary();
-
-  &:hover {
-    border-color: $navy-blue;
-    color: $navy-blue;
-  }
-
-  &:active {
-    border-color: $navier-blue;
-    color: $navier-blue;
-  }
-}
-
-//Ternary 1 button
-.ternary-1 {
-  color: $light-blue;
-  @include btn-ternary();
-
-  &:hover {
-    color: $cobalt-blue;
-  }
-
-  &:active {
-    color: $ocean-blue;
-  }
-}
-
-//Ternary 2 button
-.ternary-2 {
-  color: $saphire-blue;
-  @include btn-ternary();
-
-  &:hover {
-    color: $navy-blue;
-  }
-
-  &:active {
-    color: $navier-blue;
   }
 }

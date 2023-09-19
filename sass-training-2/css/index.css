@@ -1,141 +1,239 @@
-.w-sm {
+.pri1-sm-light-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
   width: 73px;
-}
-
-.w-md {
-  width: 89px;
-}
-
-.w-st {
-  width: 101px;
-}
-
-.h-sm {
   height: 31px;
-}
-
-.h-md {
-  height: 41px;
-}
-
-.h-st {
-  height: 47px;
-}
-
-.f-sm {
   font-size: 12px;
-}
-
-.f-md {
-  font-size: 14px;
-}
-
-.f-st {
-  font-size: 16px;
-}
-
-.primary-1 {
+  color: white;
   background-color: #3498db;
-  border-radius: 8px;
-  color: white;
-  font-family: monospace, sans-serif;
+}
+
+.pri1-st-light-blue {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 101px;
+  height: 47px;
+  font-size: 16px;
+  color: white;
+  background-color: #3498db;
 }
 
-.primary-1:hover {
-  background-color: #2980b9;
-}
-
-.primary-1:active {
-  background-color: #2070a0;
-}
-
-.primary-2 {
+.pri1-md-saphire-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 89px;
+  height: 41px;
+  font-size: 14px;
+  color: white;
   background-color: #1f618d;
+}
+
+.sec1-sm-light-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
   border-radius: 8px;
+  width: 73px;
+  height: 31px;
+  font-size: 12px;
+  color: #3498db;
+  border: solid 1px #3498db;
+}
+
+.sec1-st-light-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 101px;
+  height: 47px;
+  font-size: 16px;
+  color: #3498db;
+  border: solid 1px #3498db;
+}
+
+.sec1-md-saphire-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 89px;
+  height: 41px;
+  font-size: 14px;
+  color: #1f618d;
+  border: solid 1px #1f618d;
+}
+
+.ter1-sm-light-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 73px;
+  height: 31px;
+  font-size: 12px;
+  color: #3498db;
+  text-decoration: underline;
+  border-radius: none;
+}
+
+.ter1-st-light-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 101px;
+  height: 47px;
+  font-size: 16px;
+  color: #3498db;
+  text-decoration: underline;
+  border-radius: none;
+}
+
+.ter1-md-saphire-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 89px;
+  height: 41px;
+  font-size: 14px;
+  color: #1f618d;
+  text-decoration: underline;
+  border-radius: none;
+}
+
+.pri2-md-light-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 89px;
+  height: 41px;
+  font-size: 14px;
   color: white;
-  font-family: monospace, sans-serif;
+  background-color: #3498db;
+}
+
+.pri2-sm-saphire-blue {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 73px;
+  height: 31px;
+  font-size: 12px;
+  color: white;
+  background-color: #1f618d;
 }
 
-.primary-2:hover {
-  background-color: #154360;
+.pri2-st-saphire-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 101px;
+  height: 47px;
+  font-size: 16px;
+  color: white;
+  background-color: #1f618d;
 }
 
-.primary-2:active {
-  background-color: #487a99;
-}
-
-.secondary-1 {
-  border-color: #3498db;
+.sec2-md-light-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 89px;
+  height: 41px;
+  font-size: 14px;
   color: #3498db;
-  border-radius: 8px;
-  font-family: monospace, sans-serif;
-  border-style: solid;
-  border-width: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.secondary-1:hover {
-  border-color: #2980b9;
-  color: #2980b9;
-}
-.secondary-1:active {
-  border-color: #2070a0;
-  color: #2070a0;
+  border: solid 1px #3498db;
 }
 
-.secondary-2 {
-  border-color: #1f618d;
+.sec2-sm-saphire-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 73px;
+  height: 31px;
+  font-size: 12px;
   color: #1f618d;
-  border-radius: 8px;
-  font-family: monospace, sans-serif;
-  border-style: solid;
-  border-width: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.secondary-2:hover {
-  border-color: #154360;
-  color: #154360;
-}
-.secondary-2:active {
-  border-color: #487a99;
-  color: #487a99;
+  border: solid 1px #1f618d;
 }
 
-.ternary-1 {
+.sec2-st-saphire-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 101px;
+  height: 47px;
+  font-size: 16px;
+  color: #1f618d;
+  border: solid 1px #1f618d;
+}
+
+.ter2-md-light-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 89px;
+  height: 41px;
+  font-size: 14px;
   color: #3498db;
   text-decoration: underline;
-  font-family: monospace, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.ternary-1:hover {
-  color: #2980b9;
-}
-.ternary-1:active {
-  color: #2070a0;
+  border-radius: none;
 }
 
-.ternary-2 {
+.ter2-sm-saphire-blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 73px;
+  height: 31px;
+  font-size: 12px;
   color: #1f618d;
   text-decoration: underline;
-  font-family: monospace, sans-serif;
+  border-radius: none;
+}
+
+.ter2-st-saphire-blue {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-.ternary-2:hover {
-  color: #154360;
-}
-.ternary-2:active {
-  color: #487a99;
+  align-items: center;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  width: 101px;
+  height: 47px;
+  font-size: 16px;
+  color: #1f618d;
+  text-decoration: underline;
+  border-radius: none;
 }
