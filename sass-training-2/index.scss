@@ -1,88 +1,111 @@
-// Variables
-$base-border-radius: 8px;
-$base-font-family: monospace, sans-serif;
 $light-blue: #3498db;
-$cobalt-blue: #2980b9;
-$ocean-blue: #2070a0;
 $saphire-blue: #1f618d;
+$cobalt-blue: #2980b9;
 $navy-blue: #154360;
+$ocean-blue: #2070a0;
 $navier-blue: #487a99;
 
-$btn-styles: (
-  "pri1": "primary1",
-  "sec1": "secondary1",
-  "ter1": "ternary1",
-  "pri2": "primary2",
-  "sec2": "secondary2",
-  "ter2": "ternary2",
-);
-
-$colors: (
-  "light-blue": #3498db,
-  "saphire-blue": #1f618d,
-);
-
-$hover-colors: (
-  "cobalt-blue": #2980b9,
-  "navy-blue": #154360,
-);
-
-$active-colors: (
-  "ocean-blue": #2070a0,
-  "navier-blue": #487a99,
-);
-
-$widths: (
-  "sm": 73px,
-  "md": 89px,
-  "st": 101px,
-);
-$heights: (
-  "sm": 31px,
-  "md": 41px,
-  "st": 47px,
-);
-
-$font-sizes: (
-  "sm": 12px,
-  "md": 14px,
-  "st": 16px,
-);
-
-@mixin base-btn {
+@mixin btn($dimension-value) {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: $base-font-family;
-  border-radius: $base-border-radius;
+  font-family: monospace, sans-serif;
+  border-radius: 8px;
+  @if ($dimension-value == "sm") {
+    height: 31px;
+    width: 73px;
+    font-size: 12px;
+  } @else if ($dimension-value == "md") {
+    height: 41px;
+    width: 89px;
+    font-size: 14px;
+  } @else {
+    height: 47px;
+    width: 101px;
+    font-size: 16px;
+  }
 }
 
-@each $btn-style, $btn-style-value in $btn-styles {
-  @each $color, $color-value in $colors {
-    @each $width, $width-value in $widths {
-      @each $height, $height-value in $heights {
-        @each $font-size, $font-size-value in $font-sizes {
-          @if ($height == $width and $height == $font-size) {
-            .#{$btn-style}-#{$height}-#{$color} {
-              @include base-btn;
-              width: $width-value;
-              height: $height-value;
-              font-size: $font-size-value;
-              @if ($btn-style == "pri1" or $btn-style == "pri2") {
-                color: white;
-                background-color: $color-value;
-              } @else if ($btn-style == "sec1" or $btn-style == "sec2") {
-                color: $color-value;
-                border: solid 1px $color-value;
-              } @else {
-                color: $color-value;
-                text-decoration: underline;
-                border-radius: none;
-              }
-            }
-          }
-        }
-      }
+$dimensions: (
+  "small": "sm",
+  "medium": "md",
+  "standard": "st",
+);
+
+@each $dimension, $dimension-value in $dimensions {
+  .pri-1-#{$dimension-value} {
+    @include btn($dimension-value);
+    background-color: $light-blue;
+    color: white;
+    &:hover {
+      background-color: $cobalt-blue;
+    }
+    &:active {
+      background-color: $ocean-blue;
+    }
+  }
+
+  .pri-2-#{$dimension-value} {
+    @include btn($dimension-value);
+    background-color: $saphire-blue;
+    color: white;
+    &:hover {
+      background-color: $navy-blue;
+    }
+    &:active {
+      background-color: $navier-blue;
+    }
+  }
+
+  .sec-1-#{$dimension-value} {
+    @include btn($dimension-value);
+    border: solid 1px $light-blue;
+    color: $light-blue;
+    &:hover {
+      border-color: $cobalt-blue;
+      color: $cobalt-blue;
+    }
+    &:active {
+      border-color: $ocean-blue;
+      color: $ocean-blue;
+    }
+  }
+
+  .sec-2-#{$dimension-value} {
+    @include btn($dimension-value);
+    border: solid 1px $saphire-blue;
+    color: $saphire-blue;
+    &:hover {
+      border-color: $navy-blue;
+      color: $navy-blue;
+    }
+    &:active {
+      border-color: $navier-blue;
+      color: $navier-blue;
+    }
+  }
+
+  .ter-1-#{$dimension-value} {
+    @include btn($dimension-value);
+    text-decoration: underline;
+    color: $light-blue;
+    &:hover {
+      color: $cobalt-blue;
+    }
+    &:active {
+      color: $ocean-blue;
+    }
+  }
+
+  .ter-2-#{$dimension-value} {
+    @include btn($dimension-value);
+    text-decoration: underline;
+    color: $saphire-blue;
+    &:hover {
+      color: $navy-blue;
+    }
+    &:active {
+      color: $navier-blue;
     }
   }
 }
