@@ -1,10 +1,10 @@
 $white: #ffffff;
-$light-blue: #3498db;
-$saphire-blue: #1f618d;
-$cobalt-blue: #2980b9;
-$navy-blue: #154360;
-$ocean-blue: #2070a0;
-$navier-blue: #487a99;
+$light: #3498db;
+$saphire: #1f618d;
+$cobalt: #2980b9;
+$navy: #154360;
+$ocean: #2070a0;
+$navier: #487a99;
 
 $border-radius: 8px;
 
@@ -20,19 +20,31 @@ $font-size-large: 16px;
   $name,
   $text-color,
   $background-color,
+  $border-color,
+  $text-decoration,
   $hover-color,
-  $active-color
+  $border-hover-color,
+  $text-hover-color,
+  $active-color,
+  $border-active-color,
+  $text-active-color
 ) {
   &.button--color-#{$name} {
     color: $text-color;
     background-color: $background-color;
+    border-color: $border-color;
+    text-decoration: $text-decoration;
 
     &:hover {
       background-color: $hover-color;
+      border-color: $border-hover-color;
+      color: $text-hover-color;
     }
 
     &:active {
       background-color: $active-color;
+      border-color: $border-active-color;
+      color: $text-active-color;
     }
   }
 }
@@ -59,10 +71,87 @@ $font-size-large: 16px;
   @include button-color-variant(
     primary-light,
     $white,
-    $light-blue,
-    $cobalt-blue,
-    $ocean-blue
+    $light,
+    transparent,
+    none,
+    $cobalt,
+    transparent,
+    none,
+    $ocean,
+    transparent,
+    none
+  );
+  @include button-color-variant(
+    primary-saphire,
+    $white,
+    $saphire,
+    transparent,
+    none,
+    $navy,
+    transparent,
+    none,
+    $navier,
+    transparent,
+    none
+  );
+  @include button-color-variant(
+    secondary-light,
+    $light,
+    transparent,
+    $light,
+    none,
+    transparent,
+    $cobalt,
+    $cobalt,
+    transparent,
+    $ocean,
+    $ocean
+  );
+  @include button-color-variant(
+    secondary-saphire,
+    $saphire,
+    transparent,
+    $saphire,
+    none,
+    transparent,
+    $navy,
+    $navy,
+    transparent,
+    $navier,
+    $navier
+  );
+  @include button-color-variant(
+    ternary-light,
+    $light,
+    transparent,
+    transparent,
+    underline,
+    transparent,
+    transparent,
+    $cobalt,
+    transparent,
+    transparent,
+    $ocean
+  );
+  @include button-color-variant(
+    ternary-saphire,
+    $saphire,
+    transparent,
+    transparent,
+    underline,
+    transparent,
+    transparent,
+    $navy,
+    transparent,
+    transparent,
+    $navier
   );
 
   @include button-size-variant(small, $button-small-padding, $font-size-small);
+  @include button-size-variant(
+    medium,
+    $button-medium-padding,
+    $font-size-medium
+  );
+  @include button-size-variant(large, $button-large-padding, $font-size-large);
 }
