@@ -1,3 +1,4 @@
+$white: #ffffff;
 $light-blue: #3498db;
 $saphire-blue: #1f618d;
 $cobalt-blue: #2980b9;
@@ -5,107 +6,63 @@ $navy-blue: #154360;
 $ocean-blue: #2070a0;
 $navier-blue: #487a99;
 
-@mixin btn($dimension-value) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: monospace, sans-serif;
-  border-radius: 8px;
-  @if ($dimension-value == "sm") {
-    height: 31px;
-    width: 73px;
-    font-size: 12px;
-  } @else if ($dimension-value == "md") {
-    height: 41px;
-    width: 89px;
-    font-size: 14px;
-  } @else {
-    height: 47px;
-    width: 101px;
-    font-size: 16px;
+$border-radius: 8px;
+
+$button-small-padding: 8px 12px;
+$button-medium-padding: 12px 16px;
+$button-large-padding: 14px 18px;
+
+$font-size-small: 12px;
+$font-size-medium: 14px;
+$font-size-large: 16px;
+
+@mixin button-color-variant(
+  $name,
+  $text-color,
+  $background-color,
+  $hover-color,
+  $active-color
+) {
+  &.button--color-#{$name} {
+    color: $text-color;
+    background-color: $background-color;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &:active {
+      background-color: $active-color;
+    }
   }
 }
 
-$dimensions: (
-  "small": "sm",
-  "medium": "md",
-  "standard": "st",
-);
-
-@each $dimension, $dimension-value in $dimensions {
-  .pri-1-#{$dimension-value} {
-    @include btn($dimension-value);
-    background-color: $light-blue;
-    color: white;
-    &:hover {
-      background-color: $cobalt-blue;
-    }
-    &:active {
-      background-color: $ocean-blue;
-    }
+@mixin button-size-variant($size, $padding, $font-size) {
+  &.button--size-#{$size} {
+    font-size: $font-size;
+    padding: $padding;
   }
+}
 
-  .pri-2-#{$dimension-value} {
-    @include btn($dimension-value);
-    background-color: $saphire-blue;
-    color: white;
-    &:hover {
-      background-color: $navy-blue;
-    }
-    &:active {
-      background-color: $navier-blue;
-    }
-  }
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica;
+  font-size: 14px;
+  line-height: 130%;
+  border-radius: $border-radius;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  cursor: pointer;
 
-  .sec-1-#{$dimension-value} {
-    @include btn($dimension-value);
-    border: solid 1px $light-blue;
-    color: $light-blue;
-    &:hover {
-      border-color: $cobalt-blue;
-      color: $cobalt-blue;
-    }
-    &:active {
-      border-color: $ocean-blue;
-      color: $ocean-blue;
-    }
-  }
+  @include button-color-variant(
+    primary-light,
+    $white,
+    $light-blue,
+    $cobalt-blue,
+    $ocean-blue
+  );
 
-  .sec-2-#{$dimension-value} {
-    @include btn($dimension-value);
-    border: solid 1px $saphire-blue;
-    color: $saphire-blue;
-    &:hover {
-      border-color: $navy-blue;
-      color: $navy-blue;
-    }
-    &:active {
-      border-color: $navier-blue;
-      color: $navier-blue;
-    }
-  }
-
-  .ter-1-#{$dimension-value} {
-    @include btn($dimension-value);
-    text-decoration: underline;
-    color: $light-blue;
-    &:hover {
-      color: $cobalt-blue;
-    }
-    &:active {
-      color: $ocean-blue;
-    }
-  }
-
-  .ter-2-#{$dimension-value} {
-    @include btn($dimension-value);
-    text-decoration: underline;
-    color: $saphire-blue;
-    &:hover {
-      color: $navy-blue;
-    }
-    &:active {
-      color: $navier-blue;
-    }
-  }
+  @include button-size-variant(small, $button-small-padding, $font-size-small);
 }
